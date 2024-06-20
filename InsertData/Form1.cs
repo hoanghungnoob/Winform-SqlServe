@@ -23,14 +23,7 @@ namespace InsertData
         private void InitializeListView()
         {
             // Đặt chế độ View của ListView thành Details để hiển thị các cột
-            lvVT.View = View.Details;
-            lvVT.FullRowSelect = true;
 
-            // Thêm các cột vào ListView
-            lvVT.Columns.Add("Mã Vật Tư", 100);
-            lvVT.Columns.Add("Tên Vật Tư", 150);
-            lvVT.Columns.Add("Đơn Vị Tính", 100);
-            lvVT.Columns.Add("Phần Trăm", 100);
         }
 
         private void btnThemVT_Click(object sender, EventArgs e)
