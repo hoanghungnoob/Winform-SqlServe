@@ -1,0 +1,10 @@
+D:\KCL_LEARN\ConnectSQLServer\BaiTap\bin\Debug\BaiTap.exe.config
+D:\KCL_LEARN\ConnectSQLServer\BaiTap\bin\Debug\BaiTap.exe
+D:\KCL_LEARN\ConnectSQLServer\BaiTap\bin\Debug\BaiTap.pdb
+D:\KCL_LEARN\ConnectSQLServer\BaiTap\obj\Debug\BaiTap.csproj.AssemblyReference.cache
+D:\KCL_LEARN\ConnectSQLServer\BaiTap\obj\Debug\BaiTap.Form1.resources
+D:\KCL_LEARN\ConnectSQLServer\BaiTap\obj\Debug\BaiTap.Properties.Resources.resources
+D:\KCL_LEARN\ConnectSQLServer\BaiTap\obj\Debug\BaiTap.csproj.GenerateResource.cache
+D:\KCL_LEARN\ConnectSQLServer\BaiTap\obj\Debug\BaiTap.csproj.CoreCompileInputs.cache
+D:\KCL_LEARN\ConnectSQLServer\BaiTap\obj\Debug\BaiTap.exe
+D:\KCL_LEARN\ConnectSQLServer\BaiTap\obj\Debug\BaiTap.pdb
