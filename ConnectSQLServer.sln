@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaiTap", "BaiTap\BaiTap.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsertData", "InsertData\InsertData.csproj", "{49C3C375-64F6-48E7-B10D-D6A5D35FAB27}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RibbonUIMaterial", "RibbonUIMaterial\RibbonUIMaterial.csproj", "{62396F22-B581-4DDA-9622-F936DE4F27A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{49C3C375-64F6-48E7-B10D-D6A5D35FAB27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49C3C375-64F6-48E7-B10D-D6A5D35FAB27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49C3C375-64F6-48E7-B10D-D6A5D35FAB27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62396F22-B581-4DDA-9622-F936DE4F27A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62396F22-B581-4DDA-9622-F936DE4F27A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62396F22-B581-4DDA-9622-F936DE4F27A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62396F22-B581-4DDA-9622-F936DE4F27A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
