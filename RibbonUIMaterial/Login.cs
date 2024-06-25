@@ -9,67 +9,67 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using RibbonUIMaterial.View;
+using RibbonUIMaterial.Model;
+
 namespace RibbonUIMaterial
 {
     public partial class Login : Form
     {
-        string strCon = @"Data Source=msi\sqlexpress;Initial Catalog=testLogin;Integrated Security=True;";
+        string strCon = @"Data Source=msi\sqlexpress;Initial Catalog=TodoLists;Integrated Security=True;";
         SqlConnection sqlCon = null;
 
         private string name;
         private string pass;
+        private string loggedInDisplayName;
+
         public Login()
         {
             InitializeComponent();
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
-            
         {
             this.name = username.Text;
             this.pass = password.Text;
             if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(pass))
             {
-                MessageBox.Show("Please input name and password");
+                MessageBox.Show("Please input username and password");
                 return;
             }
             else
             {
                 try
                 {
-                    using (sqlCon = new SqlConnection(strCon))
+                    // Gọi hàm Login từ lớp dbLogin để kiểm tra đăng nhập
+                    DataTable dt = dbLogin.Login(name, pass);
+
+                    // Kiểm tra kết quả từ hàm Login
+                    if (dt != null && dt.Rows.Count > 0)
                     {
-                        sqlCon.Open();
-                        string query = "SELECT COUNT(1) FROM login WHERE name=@Username AND password=@Password";
-                        SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
-                        sqlCmd.Parameters.AddWithValue("@Username", name);
-                        sqlCmd.Parameters.AddWithValue("@Password", pass);
-                        int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
-                        if (count == 1)
-                        {
-                            MessageBox.Show("Login successfull");
-                            // Đóng form Login
-                            this.Hide();
+                        MessageBox.Show("Login successful");
 
-                            // Mở Form1
-                            Form1 frm = new Form1();
-                            frm.ShowDialog();
+                        // Đóng form Login
+                        this.Hide();
 
-                            // Sau khi Form1 đóng, đảm bảo thoát chương trình
-                            Application.Exit();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Login failed, please input username and password correctly");
-                        }
+                        // Mở Form1 và truyền tên người dùng đã đăng nhập vào
+                        Form1 frm = new Form1(dt.Rows[0]["displayName"].ToString()); // Thay "displayName" bằng tên cột thực tế trong cơ sở dữ liệu
+                        frm.ShowDialog();
+
+                        // Sau khi Form1 đóng, đảm bảo thoát chương trình
+                        Application.Exit();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Login failed, please input correct username and password");
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error" + ex);
+                    MessageBox.Show("Error: " + ex.Message);
                 }
             }
         }
+
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

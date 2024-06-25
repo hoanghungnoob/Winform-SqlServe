@@ -14,10 +14,11 @@ namespace RibbonUIMaterial.View
 {
     public partial class Register : Form
     {
+        private string Nickname;
         private string Username;
         private string Password;
         private string RePassword;
-        string strCon = @"Data Source=msi\sqlexpress;Initial Catalog=testLogin;Integrated Security=True;";
+        string strCon = @"Data Source=msi\sqlexpress;Initial Catalog=TodoLists;Integrated Security=True;";
         SqlConnection sqlCon = null;
         public Register()
         {
@@ -27,10 +28,11 @@ namespace RibbonUIMaterial.View
 
         private void register_Click(object sender, EventArgs e)
         {
+            this.Nickname = nickname.Text;
             this.Username = username.Text;
             this.Password = password.Text;
             this.RePassword = repassword.Text;
-            if (string.IsNullOrEmpty(Username) || string.IsNullOrEmpty(Password) || string.IsNullOrEmpty(RePassword))
+            if (string.IsNullOrEmpty(Nickname) ||  string.IsNullOrEmpty(Username) || string.IsNullOrEmpty(Password) || string.IsNullOrEmpty(RePassword))
             {
                 MessageBox.Show("Please input full information!");
             }
@@ -45,8 +47,9 @@ namespace RibbonUIMaterial.View
                     using (sqlCon = new SqlConnection(strCon))
                     {
                         sqlCon.Open();
-                        string query = "INSERT INTO login (name, password) values (@Username, @Password)";
+                        string query = "INSERT INTO users (displayname, username, password) values (@Nickname,@Username, @Password)";
                         SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
+                        sqlCmd.Parameters.AddWithValue("@Nickname", Nickname);
                         sqlCmd.Parameters.AddWithValue("@Username", Username);
                         sqlCmd.Parameters.AddWithValue("@Password", Password);
                         int result = sqlCmd.ExecuteNonQuery(); // Use ExecuteNonQuery for INSERT
