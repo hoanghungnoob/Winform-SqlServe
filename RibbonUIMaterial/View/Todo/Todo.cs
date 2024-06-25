@@ -9,22 +9,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace RibbonUIMaterial.View
+namespace RibbonUIMaterial.View.Todo
 {
-    public partial class Home : DevExpress.XtraEditors.XtraForm
+    public partial class Todo : DevExpress.XtraEditors.XtraForm
     {
-        private string nickName;
-        public Home(string name)
+        public Todo()
         {
-            this.nickName = name;
             InitializeComponent();
         }
 
-
-
-        private void Home_Load(object sender, EventArgs e)
+        private void simpleButton1_Click(object sender, EventArgs e)
         {
-            label2.Text = nickName;
+            Create frm = new Create();
+            frm.Show();
         }
     }
 }

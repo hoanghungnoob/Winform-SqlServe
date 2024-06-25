@@ -96,3 +96,5 @@ D:\KCL_LEARN\ConnectSQLServer\RibbonUIMaterial\bin\Debug\ja\DevExpress.Office.v1
 D:\KCL_LEARN\ConnectSQLServer\RibbonUIMaterial\bin\Debug\ru\DevExpress.Office.v19.2.Core.resources.dll
 D:\KCL_LEARN\ConnectSQLServer\RibbonUIMaterial\obj\Debug\RibbonUIMaterial.Login.resources
 D:\KCL_LEARN\ConnectSQLServer\RibbonUIMaterial\obj\Debug\RibbonUIMaterial.View.Register.resources
+D:\KCL_LEARN\ConnectSQLServer\RibbonUIMaterial\obj\Debug\RibbonUIMaterial.View.Todo.Todo.resources
+D:\KCL_LEARN\ConnectSQLServer\RibbonUIMaterial\obj\Debug\RibbonUIMaterial.View.Todo.Create.resources
